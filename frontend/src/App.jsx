@@ -8,6 +8,7 @@ import CustomerDashboard from './pages/CustomerDashboard';
 import AgentDashboard from './pages/AgentDashboard';
 import AdminPanel from './pages/AdminPanel';
 import TicketPage from './pages/TicketPage';
+import CreateTicket from './pages/CreateTicket';
 import ChatPage from './pages/ChatPage';
 
 // Simple Navigation Component
@@ -21,7 +22,7 @@ function Navigation() {
           <Link to="/customer" className="hover:text-blue-300">Customer</Link>
           <Link to="/agent" className="hover:text-blue-300">Agent</Link>
           <Link to="/admin" className="hover:text-blue-300">Admin</Link>
-          <Link to="/ticket/1" className="hover:text-blue-300">Ticket</Link>
+          <Link to="/ticket" className="hover:text-blue-300">Ticket</Link>
           <Link to="/chat" className="hover:text-blue-300">Chat</Link>
         </div>
       </div>
@@ -52,6 +53,7 @@ function App() {
           <Route path="/customer" element={<CustomerDashboard />} />
           <Route path="/agent" element={<AgentDashboard />} />
           <Route path="/admin" element={<AdminPanel />} />
+          <Route path="/ticket" element={<CreateTicket />} />
           <Route path="/ticket/:id" element={<TicketPage />} />
           <Route path="/chat" element={<ChatPage />} />
         </Routes>

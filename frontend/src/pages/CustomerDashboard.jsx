@@ -1,6 +1,11 @@
 import React from 'react';
 
 function CustomerDashboard() {
+  const handleCreateTicket = () => {
+    console.log("CREATE TICKET CLICKED");
+    window.location.href = "/ticket";
+  };
+
   return (
     <div className="p-8">
       <h1 className="text-3xl font-bold text-gray-800 mb-6">Customer Dashboard</h1>
@@ -21,7 +26,10 @@ function CustomerDashboard() {
       </div>
       
       <div className="mt-8">
-        <button className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700">
+        <button 
+          onClick={handleCreateTicket}
+          className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700"
+        >
           Create New Ticket
         </button>
       </div>

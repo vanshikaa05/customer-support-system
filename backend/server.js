@@ -25,7 +25,7 @@ const io = new Server(httpServer, {
 });
 
 // Built-in Middleware
-app.use(cors());
+app.use(cors({ origin: "*", credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -33,9 +33,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/api/auth', authRoutes);
 app.use('/api/tickets', ticketRoutes);
 
-app.get('/', (req, res) => {
-  res.send('API is running...');
-});
+app.get('/', (req, res) => res.send('API WORKING'));
 
 // Socket.io logic
 io.on('connection', (socket) => {
